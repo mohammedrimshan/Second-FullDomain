@@ -146,3 +146,49 @@ const counters = (function() {
 counters.increment(); 
 counters.increment();
 counters.decrement();
+
+//A Self-Invoking Function (also known as an Immediately Invoked Function Expression or IIFE) is a function that runs immediately after it is defined.
+
+(function(){
+    console.log("Self-Invoking Function")
+})();
+
+(function(name){
+    console.log(`My name is ${name}`)
+})("SHANU");
+
+
+(()=>{
+    console.log(`WHAT HAPPENDED`)
+})();
+
+
+//closure
+//A closure allows a function to "remember" and access its lexical scope (the environment in which it was created) even when that function is executed outside its original scope. In simpler terms, a closure gives you access to an outer function's scope from an inner function.
+
+function Outer(){
+    let message = "HELLO I'M OUTER FUNCTION"
+    function Inner(){
+        console.log(message)
+    }
+    return Inner
+}
+
+const closureEx = Outer();
+closureEx()
+
+
+function Counters(){
+    let counts = 0;
+    return function(){
+        counts++
+        console.log(counts)
+    };
+}
+
+const increment = Counters()
+increment()
+increment()
+increment()
+
+
