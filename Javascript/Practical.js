@@ -20,6 +20,3 @@
 // const arr = numbers.filter((val)=>val%3!==0)
 // console.log(arr)
 
-
-
-//

@@ -40,7 +40,8 @@ app.get('/add',(req,res)=>{
 app.get('/admin/:id',(req,res)=>{
     const {id} = req.params;
     const {name,age} = req.query
-    res.send(`User ID is ${id} , Name:${name} and Age:${age}`)
+    const sum = Number(id) + Number(age)
+    res.send(`User ID is ${id} , ${sum} Name:${name} and Age:${age}`)
 })
 
 
